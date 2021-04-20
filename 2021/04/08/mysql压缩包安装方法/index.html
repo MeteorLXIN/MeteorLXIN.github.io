@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   
-  <title>Archive: 2021 | Hexo</title>
+  <title>mysql压缩包安装方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   
@@ -81,149 +81,159 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-
-  
-  
+        <section id="main"><article id="post-mysql压缩包安装方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
     
     
-    <section class="archives-wrap">
-      <div class="archive-title">
+      <header class="article-header">
         
-          <i class="fa fa-date"></i>
-          2021
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      mysql压缩包安装方法
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-04-08T02:54:23.000Z" itemprop="datePublished">2021年04月08日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/MeteorLXIN.github.io/2021/04/08/mysql%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#mysql压缩包安装方法</p>
+<p><strong>1）官网下载地址需要注册</strong></p>
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads">https://dev.mysql.com/downloads/mysql/5.7.html#downloads</a></p>
+<p><strong>解压到自定义文件夹</strong></p>
+<p><strong>2）找到mysql中的my.ini文件，将basedir后面的路径修改为你自己的安装路径，将datadir后的路径改为安装路径后data的路径（如果没有data文件就自己新建一个）</strong></p>
+<p><strong>data文件内容如下</strong></p>
+<p><img src="https://raw.githubusercontent.com/MeteorLXIN/picBed/master/blog_picture/mysql%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE.png"></p>
+<p><strong>3）配置环境变量</strong></p>
+<p><strong>控制面板-&gt;系统-&gt;高级系统设置-&gt;环境变量-&gt;系统环境变量中新建MYSQL_HOME</strong></p>
+<p><strong>MYSQL_HOME=C:\Work_space\mysql(mysql安装目录)</strong></p>
+<p><strong>Path点开，新建，%MYSQL_HOME%\bin</strong></p>
+<p><strong>4）以管理员身份打开cmd命令行工具</strong></p>
+<p><strong>不知道的参考：</strong> <a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/c33e3f48fa1714ea15cbb5e8.html">https://jingyan.baidu.com/article/c33e3f48fa1714ea15cbb5e8.html</a></p>
+<p><strong>5）输入以下指令初始化：</strong></p>
+<pre><code>mysqld --initialize --console
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/MeteorLXIN/picBed/master/blog_picture/mysql%E5%88%9D%E5%A7%8B%E5%8C%96.png"></p>
+<p><strong>记住红线勾的root后面的密码</strong></p>
+<p><strong>6）输入安装命令</strong></p>
+<p>  mysqld install</p>
+<p><strong>7）输入启动命令</strong></p>
+<pre><code>net start mysql
+</code></pre>
+<p><strong>8)登陆mysql并修改密码</strong></p>
+<pre><code>mysql -u root -p
+</code></pre>
+<p><strong>6-8如下图</strong></p>
+<p><img src="https://raw.githubusercontent.com/MeteorLXIN/picBed/master/blog_picture/mysql%E5%AE%89%E8%A3%85.png"> </p>
+<p><strong>9）如果出现上面的弹窗表示MySQL服务已经正常启动，使用下述命令可以为’root’@’localhost‘修改连接MySQL服务的密码</strong></p>
+<pre><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;123456789&#39;;（密码：123456789）
+</code></pre>
+<p><strong>如果以后想要使用mysql，以管理员身份打开cmd命令工具，输入mysql -u root -p，回车后再输入密码即可。</strong></p>
+<p><strong>mysql不同系统下的开启和关闭指令</strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/youpeng/p/10667127.html">https://www.cnblogs.com/youpeng/p/10667127.html</a></p>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="https://meteorlxin.github.io/2021/04/08/mysql压缩包安装方法/">https://meteorlxin.github.io/2021/04/08/mysql压缩包安装方法/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/MeteorLXIN.github.io/2021/04/12/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Windows10%E7%B3%BB%E7%BB%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          VMware虚拟机安装Windows10系统
         
       </div>
-      <div class="archives">
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/04/20/hello-world/">
-      <time class="dt-published" datetime="2021-04-20T02:57:06.487Z" itemprop="datePublished">2021年04月20日</time>
-      | <span class="archive-article-title">Hello World</span>
     </a>
-  </li>
-</ul>
-
-
   
   
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/04/12/VxWorks-WorkBench%E7%9A%84%E5%AE%89%E8%A3%85/">
-      <time class="dt-published" datetime="2021-04-12T06:40:14.000Z" itemprop="datePublished">2021年04月12日</time>
-      | <span class="archive-article-title">VxWorks-WorkBench的安装</span>
+    <a href="/MeteorLXIN.github.io/2021/04/01/%E6%B6%88%E6%81%AF%E6%80%BB%E7%BA%BF%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">消息总线的程序架构</div>
     </a>
-  </li>
-</ul>
-
-
   
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/04/12/VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Windows10%E7%B3%BB%E7%BB%9F/">
-      <time class="dt-published" datetime="2021-04-12T02:16:44.000Z" itemprop="datePublished">2021年04月12日</time>
-      | <span class="archive-article-title">VMware虚拟机安装Windows10系统</span>
-    </a>
-  </li>
-</ul>
-
-
-  
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/04/08/mysql%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/">
-      <time class="dt-published" datetime="2021-04-08T02:54:23.000Z" itemprop="datePublished">2021年04月08日</time>
-      | <span class="archive-article-title">mysql压缩包安装方法</span>
-    </a>
-  </li>
-</ul>
-
-
-  
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/04/01/%E6%B6%88%E6%81%AF%E6%80%BB%E7%BA%BF%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/">
-      <time class="dt-published" datetime="2021-04-01T09:14:52.000Z" itemprop="datePublished">2021年04月01日</time>
-      | <span class="archive-article-title">消息总线的程序架构</span>
-    </a>
-  </li>
-</ul>
-
-
-  
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/04/01/Qt%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%EF%BC%9AQtCreator%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/">
-      <time class="dt-published" datetime="2021-04-01T02:49:49.000Z" itemprop="datePublished">2021年04月01日</time>
-      | <span class="archive-article-title">Qt项目开发：QtCreator的安装和初步使用</span>
-    </a>
-  </li>
-</ul>
-
-
-  
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/03/30/vscode%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0gitlee(gitlab)%E4%BB%93%E5%BA%93%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/">
-      <time class="dt-published" datetime="2021-03-30T09:10:23.000Z" itemprop="datePublished">2021年03月30日</time>
-      | <span class="archive-article-title">vscode如何连接到gitee（gitlab）仓库</span>
-    </a>
-  </li>
-</ul>
-
-
-  
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/03/30/Nessu%E7%9A%84%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%8F%AF%E8%83%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">
-      <time class="dt-published" datetime="2021-03-30T06:23:10.000Z" itemprop="datePublished">2021年03月30日</time>
-      | <span class="archive-article-title">Nessus的详细安装和使用及可能问题的解决</span>
-    </a>
-  </li>
-</ul>
-
-
-  
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/03/29/centos%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%A1%8C%E9%9D%A2GNOME%E7%9A%84%E5%88%86%E8%BE%A8%E7%8E%87/">
-      <time class="dt-published" datetime="2021-03-29T07:43:55.000Z" itemprop="datePublished">2021年03月29日</time>
-      | <span class="archive-article-title">centos如何修改图形化桌面GNOME的分辨率</span>
-    </a>
-  </li>
-</ul>
-
-
-  
-  
-  <ul class="archive-article archive-type-post">
-  <li class="archive-article-inner">
-    <a href="/MeteorLXIN.github.io/2021/03/26/linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8GDB%E8%B0%83%E8%AF%95C,C++%E7%A8%8B%E5%BA%8F(%E6%9C%AA%E5%AE%8C)/">
-      <time class="dt-published" datetime="2021-03-26T02:08:56.000Z" itemprop="datePublished">2021年03月26日</time>
-      | <span class="archive-article-title">linux如何使用GDB调试C/C++程序</span>
-    </a>
-  </li>
-</ul>
-
-
-
-  </div></section>
-
-
-    <nav id="page-nav">
-
-<span class="page-number current">1</span><a class="page-number" href="/MeteorLXIN.github.io/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/MeteorLXIN.github.io/archives/2021/page/2/">Next</a>
 </nav>
 
+      
+      
+        
 
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
 </section>
         
           <aside id="sidebar">
